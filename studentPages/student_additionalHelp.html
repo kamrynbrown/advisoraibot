@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<div class="AdditionalHelp"
+    style="transform: scale(0.7); width: 50%; height: 50%; left: 0px; top: 0px; position: absolute; background: white">
+    <div class="Frame1" style="width: 100px; height: 100px; left: -42px; top: 1800px; position: absolute"></div>
+    <div class="Group23" style="width: 721px; height: 128px; left: 910px; top: 1697px; position: absolute">
+        <div class="Group6" style="width: 140px; height: 128px; left: 581px; top: 0px; position: absolute">
+            <div class="Ellipse1" onclick="toggleChatbot()"
+                style="width: 140px; height: 128px; left: 0px; top: 0px; position: absolute; background: #D9D9D9; box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25)">
+            </div>
+            <div
+                style="width: 43px; height: 15px; left: 42px; top: 49px; position: absolute; color: black; font-size: 96px; font-family: Montserrat; font-weight: 700; line-height: 30px; word-wrap: break-word">
+                ?</div>
+        </div>
+
+        <div id="wholeChatBox" class="Group29" style="display:none;">
+            <div class="Group28" style="width: 695px; height: 977px; left: 33px; top: 0px; position: absolute">
+                <div class="Rectangle4"
+                    style="width: 695px; height: 977px; left: 0px; top: 0px; position: absolute; background: #D9D9D9; box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); border-radius: 30px; z-index: 2">
+                </div>
+
+
+                <input type="text" id="userInput" placeholder="Type your message..."
+                    style="width: 638px; height: 108px; left: 39px; top: 828px; position: absolute; z-index: 3">
+                <button onclick="sendMessage()"
+                    style="width: 100px; height: 75px; left: 110%; top: 828px; position: absolute; z-index: 3">Send</button>
+
+                <div id="chat" class="Response" style="position: absolute; z-index: 3">
+                    <p id="botResponse" style="font-size:30px;"></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="NeedAssistAskBisonbot"
+            style="width: 645px; height: 29px; left: 0px; top: 50px; position: absolute; text-align: center; color: black; font-size: 40px; font-family: Montserrat; font-weight: 300; line-height: 30px; word-wrap: break-word">
+            need assist? ask BisonBot</div>
+    </div>
+    <div class="Group35" style="width: 1198px; height: 466.52px; left: 214px; top: 879px; position: absolute">
+        <div class="Group22" style="width: 487px; height: 88.52px; left: 0px; top: 3px; position: absolute">
+            <div class="Rectangle6"
+                style="width: 487px; height: 81.24px; left: 0px; top: 0px; position: absolute; background: #D9D9D9; box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); border-radius: 50px">
+            </div>
+            <div class="CourseCatalog"
+                style="width: 396.18px; height: 58.52px; left: 46px; top: 30px; position: absolute; text-align: center; color: black; font-size: 36px; font-family: Montserrat; font-weight: 700; line-height: 30px; word-wrap: break-word">
+                Course Catalog</div>
+        </div>
+        <div class="Group24" style="width: 487px; height: 88.52px; left: 0px; top: 207px; position: absolute">
+            <div class="Rectangle6"
+                style="width: 487px; height: 81.24px; left: 0px; top: 0px; position: absolute; background: #D9D9D9; box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); border-radius: 50px">
+            </div>
+            <div class="AcademicCalendar"
+                style="width: 396.18px; height: 58.52px; left: 46px; top: 30px; position: absolute; text-align: center; color: black; font-size: 36px; font-family: Montserrat; font-weight: 700; line-height: 30px; word-wrap: break-word">
+                Academic Calendar</div>
+        </div>
+        <div class="Group27" style="width: 487px; height: 88.52px; left: 711px; top: 210px; position: absolute">
+            <div class="Rectangle6"
+                style="width: 487px; height: 81.24px; left: 0px; top: 0px; position: absolute; background: #D9D9D9; box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); border-radius: 50px">
+            </div>
+            <div class="Bisonweb"
+                style="width: 396.18px; height: 58.52px; left: 46px; top: 30px; position: absolute; text-align: center; color: black; font-size: 36px; font-family: Montserrat; font-weight: 700; line-height: 30px; word-wrap: break-word">
+                BisonWeb</div>
+        </div>
+        <div class="Group26" style="width: 487px; height: 88.52px; left: 711px; top: 0px; position: absolute">
+            <div class="Rectangle6"
+                style="width: 487px; height: 81.24px; left: 0px; top: 0px; position: absolute; background: #D9D9D9; box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); border-radius: 50px">
+            </div>
+            <div class="ChatHistory"
+                style="width: 396.18px; height: 58.52px; left: 46px; top: 30px; position: absolute; text-align: center; color: black; font-size: 36px; font-family: Montserrat; font-weight: 700; line-height: 30px; word-wrap: break-word">
+                Chat History</div>
+        </div>
+        <div class="Group25" style="width: 487px; height: 88.52px; left: 342px; top: 378px; position: absolute">
+            <div class="Rectangle6"
+                style="width: 487px; height: 81.24px; left: 0px; top: 0px; position: absolute; background: #D9D9D9; box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); border-radius: 50px">
+            </div>
+            <div class="Canvas"
+                style="width: 396.18px; height: 58.52px; left: 46px; top: 30px; position: absolute; text-align: center; color: black; font-size: 36px; font-family: Montserrat; font-weight: 700; line-height: 30px; word-wrap: break-word">
+                Canvas</div>
+        </div>
+    </div>
+    <div class="Group36" style="width: 1484px; height: 108px; left: 77px; top: 684px; position: absolute">
+        <div class="Rectangle5"
+            style="width: 1484px; height: 108px; left: 0px; top: 0px; position: absolute; background: white; border-radius: 50px; border: 1px black solid">
+        </div>
+    </div>
+    <div class="AdditionalResourses"
+        style="width: 1203px; height: 61px; left: 223px; top: 536px; position: absolute; text-align: center; color: black; font-size: 96px; font-family: Montserrat; font-weight: 700; line-height: 50px; word-wrap: break-word">
+        Additional Resourses</div>
+    <div class="Group24" style="width: 785px; left: 808px; top: 90px; position: absolute">
+        <div class="Ellipse1"
+            style="width: 140px; height: 128px; left: 645px; top: 0px; position: absolute; background: #D9D9D9; box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25)">
+        </div>
+        <div class="ProblemWithTheSiteLeaveAMessageForAdmin"
+            style="width: 645px; height: 29px; left: 0px; top: 49px; position: absolute; text-align: center; color: black; font-size: 40px; font-family: Montserrat; font-weight: 300; line-height: 30px; word-wrap: break-word">
+            problem with the site? leave a message for admin</div>
+    </div>
+    <div class="Group9" style="width: 845px; height: 61px; left: 35px; top: 1734px; position: absolute">
+        <div class="AdvisorChat"
+            style="width: 209px; height: 48px; left: 398px; top: 0px; position: absolute; text-align: center; color: black; font-size: 40px; font-family: Montserrat; font-weight: 300; text-decoration: underline; line-height: 30px; word-wrap: break-word">
+            Advisor <br />Chat</div>
+        <div class="Home"
+            style="width: 209px; height: 48px; left: 0px; top: 0px; position: absolute; text-align: center; color: black; font-size: 40px; font-family: Montserrat; font-weight: 300; text-decoration: underline; line-height: 30px; word-wrap: break-word">
+            Home</div>
+        <div class="Profile"
+            style="width: 209px; height: 48px; left: 193px; top: 0px; position: absolute; text-align: center; color: black; font-size: 40px; font-family: Montserrat; font-weight: 300; text-decoration: underline; line-height: 30px; word-wrap: break-word">
+            Profile</div>
+        <div class="GraduationScheme"
+            style="width: 226px; height: 61px; left: 619px; top: 0px; position: absolute; text-align: center; color: black; font-size: 40px; font-family: Montserrat; font-weight: 300; text-decoration: underline; line-height: 30px; word-wrap: break-word">
+            Graduation<br />Scheme</div>
+    </div>
+</div>
+
+<script>
+    function toggleChatbot() {
+        var chatbot = document.getElementById("wholeChatBox");
+        chatbot.style.display = chatbot.style.display === "none" ? "block" : "none";
+    }
+
+    async function sendMessage() {
+        const userInput = document.getElementById('userInput').value;
+        const responseContainer = document.getElementById('botResponse');
+
+        try {
+            const response = await fetch('http://localhost:8000/get-response/', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ input: userInput })
+            });
+
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+
+            const data = await response.json();
+            responseContainer.textContent = data;
+        } catch (error) {
+            console.error('Error:', error);
+            responseContainer.textContent = 'Sorry, there was an error processing your request.';
+        }
+    }
+
+</script>
+
+</html>
