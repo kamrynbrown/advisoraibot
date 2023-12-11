@@ -1,23 +1,110 @@
 <!DOCTYPE html>
 <html lang="en">
 
+<body>
 
-<div class="HeroE" style="width: 1665px; height: 928px; position: relative; background: white">
-    <div class="Rectangle" style="width: 1680px; height: 960px; left: 0px; top: 2px; position: absolute; justify-content: center; align-items: center; display: inline-flex">
-      <div class="Rectangle" style="width: 1680px; height: 960px; background: #E5E5E5; border: 1px rgba(0, 0, 0, 0.30) solid"></div>
-    </div>
-    <div class="TheLargestCommunityOfPhotoEnthusiasts" style="width: 1392px; height: 80px; left: 137px; top: 127px; position: absolute; justify-content: center; align-items: center; display: inline-flex">
-      <div class="TheLargestCommunityOfPhotoEnthusiasts" style="width: 1392px; height: 80px; text-align: center; color: black; font-size: 56px; font-family: Montserrat; font-weight: 400; line-height: 80px; word-wrap: break-word">Bison Advisor</div>
-    </div>
-    <div class="Username" style="width: 329px; height: 57px; left: 574px; top: 326px; position: absolute; text-align: center; color: black; font-size: 24px; font-family: Montserrat; font-weight: 500; word-wrap: break-word">Username</div>
-    <div class="Password" style="width: 329px; height: 57px; left: 570px; top: 445px; position: absolute; text-align: center; color: black; font-size: 24px; font-family: Montserrat; font-weight: 500; word-wrap: break-word">Password</div>
-    <div class="Line1" style="width: 301px; height: 0px; left: 676px; top: 383px; position: absolute; border: 1px black solid"></div>
-    <div class="Line2" style="width: 301px; height: 0px; left: 676px; top: 502px; position: absolute; border: 1px black solid"></div>
-    <div class="Button" style="width: 234px; height: 78px; left: 700px; top: 550px; position: absolute">
-        <div class="Rectangle2" style="width: 234px; height: 78px; left: 0px; top: 0px; position: absolute; background: white; border-radius: 6px; border: 1px black solid"></div>
-        <div class="LogIn" style="left: 79.60px; top: 24.45px; position: absolute; text-align: center; color: black; font-size: 24px; font-family: Montserrat; font-weight: 500; word-wrap: break-word">Log in</div>
+  <script type="module">
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.0.0/firebase-app.js";
+    import { getAuth } from "https://www.gstatic.com/firebasejs/9.0.0/firebase-auth.js";
+    import { getFirestore } from "https://www.gstatic.com/firebasejs/9.0.0/firebase-firestore.js";
+    import { collection, getDocs, query, where } from "https://www.gstatic.com/firebasejs/9.0.0/firebase-firestore.js";
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyDkiAnxFTj9l8YcPwfHGBIVb10ltKL2Q5U",
+      authDomain: "bisonadvisor-c37cb.firebaseapp.com",
+      projectId: "bisonadvisor-c37cb",
+      storageBucket: "bisonadvisor-c37cb.appspot.com",
+      messagingSenderId: "668841962708",
+      appId: "1:668841962708:web:2750e327e71bbe022f1f41",
+      measurementId: "G-H9V6XL0YK5"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
+
+    const db = getFirestore(app);
+
+    document.getElementById('login-form').addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      var username = document.getElementById('username').value;
+      var password = document.getElementById('password').value;
+
+      const usersRef = collection(db, 'users');
+      const q = query(usersRef, where('username', '==', username));
+
+      getDocs(q).then((querySnapshot) => {
+
+        if (!querySnapshot.empty) {
+          // Username found, now check the password
+          var userDoc = querySnapshot.docs[0];
+          var userData = userDoc.data();
+
+          if (password === userData.password) {
+            // Passwords match, authentication success
+            console.log('Authenticated successfully as:', userData.type);
+
+            if (userData.type === 'student') {
+              window.location.href = 'studentPages/student_homepage.html'; // Replace with the student homepage URL
+            } else if (userData.type === 'advisor') {
+              window.location.href = 'advisorhomepage.html'; // Replace with the advisor homepage URL
+            } else if (userData.type === 'admin') {
+              window.location.href = 'adminhomepage.html'; // Replace with the advisor homepage URL
+            } else {
+              console.error('Type identification error');
+            }
+
+          } else {
+            // Passwords do not match
+            console.error('Authentication failed: Incorrect password.');
+          }
+        } else {
+          // Username not found
+          console.error('Authentication failed: Username does not exist.');
+        }
+      })
+        .catch((error) => {
+          // Handle errors
+          console.error('Error querying the database:', error);
+        });
+    });
+
+  </script>
+
+  <div class="HeroE"
+    style="width: 100%; height: 100%; position: relative; justify-content: center; align-items: center; display: inline-flex; background: white">
+    <!-- Existing content -->
+    <div class="BisonAdvisor"
+      style="width: 1203px; height: 61px; top: 200px; justify-content: center; align-items: center; position: absolute; text-align: center; color: black; font-size: 96px; font-family: Montserrat; font-weight: 700; line-height: 50px; word-wrap: break-word">
+      Bison Advisor</div>
+
+    <form id="login-form"
+      style="position: relative; width: 100%; max-width: 400px; justify-content: center; align-items: center;">
+      <!-- Username input field -->
+      <div class="Username" style="width: 329px; height: 57px; top: 326px; position: absolute;">
+        <label for="username"
+          style="text-align: center; color: black; font-size: 24px; font-family: Montserrat; font-weight: 500;">Username</label>
+        <input type="text" id="username" name="username" style="width: 300px; height: 40px; font-size: 20px;">
       </div>
 
-</div>
+      <!-- Password input field -->
+      <div class="Password" style="width: 329px; height: 57px; top: 445px; position: absolute;">
+        <label for="password"
+          style="text-align: center; color: black; font-size: 24px; font-family: Montserrat; font-weight: 500;">Password</label>
+        <input type="password" id="password" name="password" style="width: 300px; height: 40px; font-size: 20px;">
+      </div>
+
+      <!-- Existing button -->
+      <div class="Button" style="width: 234px; height: 78px; top: 550px; position: absolute">
+        <button type="submit"
+          style="width: 234px; height: 78px; background: white; border-radius: 6px; border: 1px black solid; color: black; font-size: 24px; font-family: Montserrat; font-weight: 500;">
+          Log in
+        </button>
+      </div>
+    </form>
+  </div>
+
+</body>
 
 </html>
