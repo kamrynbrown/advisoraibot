@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+.column {
+  float: left;
+  width: 33.3%;
+  margin-bottom: 16px;
+  padding: 0 8px;
+}
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  margin: 8px;
+}
+
+.about-section {
+  padding: 50px;
+  text-align: center;
+  background-color: #474e5d;
+  color: white;
+}
+
+.container {
+  padding: 0 16px;
+}
+
+.container::after, .row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.title {
+  color: grey;
+}
+
+.button {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 8px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+}
+
+.button:hover {
+  background-color: #555;
+}
+
+@media screen and (max-width: 650px) {
+  .column {
+    width: 100%;
+    display: block;
+  }
+}
+</style>
+</head>
+<body>
+
+<!-- Top Navigation Buttons -->
+<div style="width: 130px; height: 40px; left: 1441px; top: 10px; position: absolute">
+      <a href="https://technology.howard.edu" style="width: 130px; height: 40px; display: block; text-decoration: none;">
+          <div style="width: 130px; height: 40px; left: 0px; top: 0px; position: absolute; background: black; border-radius: 6px"></div>
+		  <div style="left: 31px; top: 11px; position: absolute; text-align: center; color: white; font-size: 15px; font-family: Montserrat; font-weight: 500; word-wrap: break-word">Contact Us</div>
+      </a>
+</div>
+
+
+<div class="about-section">
+  <h1>About Us</h1>
+  <p>We are Team SWE23.</p>
+  <p>This website is an undergraduate advising assistant, powered by generative AI, in order to modernize and optimize the academic advising process.</p>
+</div>
+
+<h2 style="text-align:center">Our Team</h2>
+<div class="row">
+
+  <div class="column">
+    <div class="card">
+      <img src="/w3images/team1.jpg" alt="Ashley" style="width:100%">
+      <div class="container">
+        <h2>Ashley Haynes</h2>
+        <p class="title">Full-stack</p>
+        <p>ashley.haynes@bison.howard.edu</p>
+        <p><button class="button">Contact</button></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="column">
+    <div class="card">
+      <img src="/w3images/team2.jpg" alt="Kamryn" style="width:100%">
+      <div class="container">
+        <h2>Kamryn Brown</h2>
+        <p class="title">PM, Front-end</p>
+        <p>kamryn.brown@bison.howard.edu</p>
+        <p><button class="button">Contact</button></p>
+      </div>
+    </div>
+  </div>
+  
+  <div class="column">
+    <div class="card">
+      <img src="/w3images/team3.jpg" alt="Courtney" style="width:100%">
+      <div class="container">
+        <h2>Courtney Mahugu</h2>
+        <p class="title">Back-end</p>
+        <p>courtney.mahugu@bison.howard.edu</p>
+        <p><button class="button">Contact</button></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="column">
+    <div class="card">
+      <img src="/w3images/team3.jpg" alt="Kaitlyn" style="width:100%">
+      <div class="container">
+        <h2>Kaitlyn Ellis</h2>
+        <p class="title">Front-end</p>
+        <p>kaitlyn.ellis@bison.howard.edu</p>
+        <p><button class="button">Contact</button></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="column">
+    <div class="card">
+      <img src="/w3images/team3.jpg" alt="Ayomide" style="width:100%">
+      <div class="container">
+        <h2>Ayomide Okeshola</h2>
+        <p class="title">Full-stack</p>
+        <p>ayomide.okeshola@bison.howard.edu</p>
+        <p><button class="button">Contact</button></p>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>
