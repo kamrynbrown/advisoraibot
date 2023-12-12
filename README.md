@@ -16,7 +16,7 @@ To be able to use the chatbot, you must have OpenAI and FastAPI installed on you
 - `pip install uvicorn` : This server is used to run your FastAPI application. Once both FastAPI and Uvicorn are installed, you can develop and run FastAPI web applications on your local machine.
 
 ### Using the Chatbot
-Once you have these two packages on your computer, run the following command in your terminal:
+Once you have these two packages on your computer, cd to the studentPages directory, then run the following command in your terminal:
 `uvicorn chatbot_backend:app`
 
 This command runs the FastAPI server. As long as the server is running, the chatbot will work on all the sites.
