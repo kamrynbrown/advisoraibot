@@ -1,0 +1,158 @@
+
+<div style="width: 1495px; height: 796px; background: #D9D9D9">
+
+	<!-- Top Navigation Buttons -->
+	<div style="width: 130px; height: 40px; left: 1561px; top: 10px; position: absolute">
+        <a href="./about.html" target="_blank" style="width: 130px; height: 40px; display: block; text-decoration: none;">
+          <div style="width: 130px; height: 40px; left: 0px; top: 0px; position: absolute; background: black; border-radius: 6px"></div>
+		  <div style="left: 44px; top: 11px; position: absolute; text-align: center; color: white; font-size: 15px; font-family: Montserrat; font-weight: 500; word-wrap: break-word">About</div>
+      </a>
+	</div>
+	<div style="width: 130px; height: 40px; left: 1399px; top: 10px; position: absolute">
+		<a href="https://technology.howard.edu" style="width: 130px; height: 40px; display: block; text-decoration: none;">
+			<div style="width: 130px; height: 40px; left: 0px; top: 0px; position: absolute; background: white; border-radius: 6px; border: 1px black solid"></div>
+			<div style="left: 30px; top: 11px; position: absolute; text-align: center; color: black; font-size: 15px; font-family: Montserrat; font-weight: 500; word-wrap: break-word">Contact Us</div>
+		</a>
+	</div>
+	<div style="width: 130px; height: 40px; left: 231px; top: 10px; position: absolute">
+  		<a href="./adminhomepage.html" style="width: 130px; height: 40px; display: block; text-decoration: none;">
+			<div style="width: 130px; height: 40px; left: 0px; top: 0px; position: absolute; background: white; border-radius: 6px; border: 1px black solid"></div>
+			<div style="left: 30px; top: 11px; position: absolute; text-align: center; color: black; font-size: 15px; font-family: Montserrat; font-weight: 500; word-wrap: break-word">Home Page</div>
+		</a>
+	</div>
+	
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Your Website</title>
+        <script>
+            // Function to increment and display the visitor count
+            function incrementVisitorCount() {
+                // Check if localStorage is supported
+                if (typeof(Storage) !== "undefined") {
+                    try {
+                        // Attempt to use localStorage
+                        var visitorCount = parseInt(localStorage.getItem('visitorCount')) || 0;
+    
+                        // Increment the count
+                        visitorCount++;
+    
+                        // Save the updated count back to localStorage
+                        localStorage.setItem('visitorCount', visitorCount);
+    
+                        // Update the page to display the current visitor count
+                        document.getElementById('visitorCount').innerText = visitorCount;
+                    } catch (error) {
+                        // If there's an error (probably due to security restrictions), fall back to using cookies
+                        incrementVisitorCountWithCookie();
+                    }
+                } else {
+                    // If localStorage is not supported, fall back to using cookies
+                    incrementVisitorCountWithCookie();
+                }
+            }
+    
+            // Function to increment visitor count using cookies
+            function incrementVisitorCountWithCookie() {
+                var visitorCount = parseInt(getCookie('visitorCount')) || 0;
+    
+                // Increment the count
+                visitorCount++;
+    
+                // Save the updated count back to a cookie
+                document.cookie = 'visitorCount=' + visitorCount;
+    
+                // Update the page to display the current visitor count
+                document.getElementById('visitorCount').innerText = visitorCount;
+            }
+    
+            // Function to get the value of a cookie
+            function getCookie(name) {
+                var value = '; ' + document.cookie;
+                var parts = value.split('; ' + name + '=');
+                if (parts.length === 2) return parts.pop().split(';').shift();
+            }
+    
+            // Function to reset the visitor count on page exit
+            function resetVisitorCountOnExit() {
+                // Check if localStorage is supported
+                if (typeof(Storage) !== "undefined") {
+                    // Reset the visitor count in localStorage
+                    localStorage.removeItem('visitorCount');
+                } else {
+                    // If localStorage is not supported, reset the count in cookies
+                    document.cookie = 'visitorCount=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
+                }
+            }
+    
+            // Call the function to increment the visitor count when the page loads
+            window.onload = function() {
+                incrementVisitorCount();
+            };
+    
+            // Attach an event listener to reset the visitor count when the page is exited
+            window.addEventListener('beforeunload', resetVisitorCountOnExit);
+        </script>
+    </head>
+    <body>    
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Your Website</title>
+            <style>
+                body {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    height: 100vh;
+                    margin: 0;
+                }
+
+                h2 {
+                    font-size: 36px;
+                    text-align: center;
+                }
+            </style>
+        </head>
+        <body>
+            <h2>Visitor Count!</h2>
+        </body>
+
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Your Website</title>
+            <style>
+                body {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    height: 100vh;
+                    margin: 0;
+                }
+
+                p {
+                    font-size: 18px; 
+                    text-align: center;
+                }
+
+                #visitorCount {
+                    font-size: 100px; 
+                    color: blue;
+                }
+            </style>
+        </head>
+        <body>
+            <p>This website has been visited</p>
+            <p><span id="visitorCount">0</span></p>
+            <p> times.</p>
+        </body>
+        </html>
+    </body>
+    </html>
+    
+</div>
